@@ -1,0 +1,65 @@
+{
+  "processorData": {
+    "tenantId": "PARTNERNAME",
+    "customData": {
+      "customData1": "custom value 1",
+      "customData2": "custom value 2"
+    }
+  },
+  "paymentData": {
+    "orderId": "7AXng4kd5",
+    "authData": {
+      "amountAuthorizedNumeric": "000000000324",
+      "amountOtherNumeric": "000000000000",
+      "applicationCryptogram": "A2CDBCD882F5FDF6",
+      "applicationExpirationDate": "331128",
+      "applicationInterchangeProfile": "1980",
+      "applicationLabel": "Credit",
+      "applicationPAN": "5413330089010640",
+      "applicationPANSequenceNumber": "00",
+      "applicationPreferredName": "Credit",
+      "applicationTransactionCounter": "009D",
+      "applicationUsageControl": "FF00",
+      "applicationVersionNumberReader": "0002",
+      "cryptogramInformationData": "80",
+      "cvmResults": "1F0302",
+      "interfaceDeviceSerialNumber": "SERIAL12",
+      "issuerApplicationData": "1110A0430FA400000000000000020000FFFF0000",
+      "issuerCodeTableIndex": "01",
+      "paymentAccountReference": "Q1Z28RKA1EBL470G9XYG90R5",
+      "terminalCapabilities": "000808",
+      "terminalCountryCode": "840",
+      "terminalType": "21",
+      "terminalVerificationResults": "0000008001",
+      "track2EquivalentData": "5413330089010640D2812201043950169F",
+      "transactionCategoryCode": "52",
+      "transactionCurrencyCode": "840",
+      "transactionCurrencyExponent": "02",
+      "transactionDate": "230209",
+      "transactionTime": "182543",
+      "transactionType": "00",
+      "unpredictableNumber": "1EAED636",
+      "posEntryMode": "07",
+      "additionalTerminalCapabilities": "6000802000",
+      "thirdPartyData": "4217",
+      "merchantCustomData": "12345678",
+      "issuerCountryCode": "840",
+      "applicationVersionNumberCard": "0002",
+      "issuerActionCodeDefault": "B450840000",
+      "issuerActionCodeDenial": "0000000000",
+      "issuerActionCodeOnline": "B470848000",
+      "formFactorIndicator": "20700080",
+      "cardTransactionQualifiers": "123",
+      "dedicatedFileName": "A0000000041010",
+      "terminalTransactionQualifiers": "9f060822260000"
+    }
+  },
+  "terminalData": {
+    "serialNumber": "40289de57e200e95017e201034480003",
+    "appName": "cloud-commerce",
+    "appVersion": "3.1.0",
+    "sdkVersion": "3.1.0",
+    "firmwareName": "Android",
+    "firmwareVersion": "13"
+  }
+}
