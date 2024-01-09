@@ -29,7 +29,7 @@ spec:
           envFrom:
             # Load the environment variables/PostgresSQL credentials
             - configMapRef:
-                # This should be the ConfigMap name created ealier
+                # This should be the ConfigMap name created earlier
                 name: db-secret-credentials
           volumeMounts:
             # The volume mounts  for the container

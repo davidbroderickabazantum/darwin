@@ -16,3 +16,26 @@ kubectl apply -f db-configmap.yaml
 kubectl apply -f db-deployment.yaml
 kubectl apply -f db-service.yaml
 
+## Secret Injection
+
+kubectl create secret generic test-secret --from-literal='username=most-basic' --from-literal='password=ReallyC0mplexOne$'
+
+## Stopping all deployments 
+Key to remember, there is no concept of stop in Kubernetes
+
+kubectl --namespace default scale deployment $(kubectl --namespace default get deployment | awk '{print $1}') --replicas 0
+
+
+## Prod Credentials
+
+kubectl create secret generic prod-db-secret --from-literal=username=production --from-literal=password=Secure1
+
+kubectl apply -f manifest.yaml
+
+Attach to the running pod and inspect
+
+kubectl exec --stdin --tty sample-node-app-f4cf7f776-bspbq -- /bin/sh
+
+-> Net outcome - secret injected and the pod can pick it up. It is not in the code for the pod and it is not known on the environment.
+
+

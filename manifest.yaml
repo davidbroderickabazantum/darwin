@@ -13,12 +13,20 @@ spec:
       labels:
         app: sample-node-app
     spec:
+      volumes:
+        - name: secret-volume
+          secret:
+            secretName: prod-db-secret
       containers:
         - name: sample-node-app
           image: davidbroderickabazantum/node-image
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
+          volumeMounts:
+            - name: secret-volume
+              readOnly: true
+              mountPath: "/etc/secret-volume"
 ---
 apiVersion: v1
 kind: Service
