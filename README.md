@@ -8,6 +8,19 @@ docker push <dockerhubname>/node-image
 kubectl apply -f manifest.yaml
 kubectl get pods
 
+To scale up the deployment
+
+kubectl scale deployment sample-node-app --replicas=5
+
+To scale down the deployment to 1 
+
+kubectl scale deployment sample-node-app --replicas=1
+
+To rollout new containers - basic version for now
+
+kubectl rollout restart deployment/sample-node-app
+
+
 ## Insecure Postgres
 
 kubectl apply -f db-persistent-volume.yaml
