@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: server1a
+  labels:
+    name: server1a
+
+spec:
+  selector:
+    matchLabels:
+      app: postgresdb
+
+  template:
+    metadata:
+      labels:
+        app: postgresdb
+
+    spec:
+      containers:
+        - name: postgresdb
+          image: postgres
+          ports:
+            - containerPort: 6432
+          env:
+            - name: "PG_PRIMARY_PORT"
+              value: "6432"
+
+            - name: "PGDATA_PATH_OVERRIDE"
+              value: "primary"
+
+            - name: "PGHOST"
+              value: "/tmp"
+
+            - name: "PG_USER"
+              value: "testuser"
+
+            - name: "PG_PASSWORD"
+              value: "password"
+
+            - name: "PG_PRIMARY_USER"
+              value: "primaryuser"
+
+            - name: "PG_PRIMARY_PASSWORD"
+              value: "password"
+
+            - name: "PG_ROOT_PASSWORD"
+              value: "password"
+
+            - name: "PG_DATABASE"
+              value: "userdb"
+
+          volumeMounts:
+            # The volume mounts  for the container
+            - mountPath: /var/lib/postgres/data
+              name: db-data
+      volumes:
+        - name: db-data
