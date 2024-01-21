@@ -2,6 +2,9 @@
 
 Darwin is an introduction to kubernetes control of docker images.
 
+minikube start
+minikube dashboard
+
 docker build -t node-image .
 docker image tag node-image <dockerhubname>/node-image
 docker push <dockerhubname>/node-image
@@ -19,6 +22,14 @@ kubectl scale deployment sample-node-app --replicas=1
 To rollout new containers - basic version for now
 
 kubectl rollout restart deployment/sample-node-app
+
+## Call the service to 'access' the sample-node-app
+
+Node Service runs at port 80 on the cluster
+
+minikube service node-service --url
+Sample Response - http://127.0.0.1:61716
+
 
 
 ## Insecure Postgres
